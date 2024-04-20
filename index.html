@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//cdn.jsdelivr.net/gh/s1acr/my_jsDelivr@main/googleFonts/myblog.css" rel="stylesheet">
+    <meta name="author" content="slacr">
+    <meta name="description" content="计算机视觉作业， 2d-变换演示程序， 重邮21级网工二班slacr， 2024-2-21">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link>
+</head>
+<body>
+    <div class="main">
+        <div id="display">
+            <img id="photo" alt="picture that gets transformed" src="./dog.jpeg" style="transition: 1s ease-in-out;">
+            <div id="footnote">  
+                <pre id="matrixDisplay">
+
+变换矩阵：
+[ a,  b,  tx]
+[ c,  d,  ty]
+[ 0,  0,   1]
+                </pre>
+            </div>
+
+        </div>
+        <sub id="info">
+            <div id=title>2D-Trans</div>
+            <label for="a">a:</label>
+            <input id="a" type="number" step=".1" value="1">
+            <label for="b">b:</label>
+            <input id="b" type="number" step=".1" value="0">
+            <br>
+            <label for="c">c:</label>
+            <input id="c" type="number" step=".1" value="0">
+            <label for="d">d:</label>
+            <input id="d" type="number" step=".1" value="1">
+            <br>
+            <label for="tx">tx:</label>
+            <input id="tx" type="number" step="10" value="0">
+            <label for="ty">ty:</label>
+            <input id="ty" type="number" step="10" value="0">
+            <br>
+
+            
+            <label for="angle">angle: </label> 
+            <span id="angleValue">0 </span> degree
+            <input type="range" id="angle" min="-180" max="180" value="0" step="5">
+            <br/>
+            <label for="scale">scale: </label>
+            <span id="scaleValue">1 </span> x
+            <input type="range" id="scale" min=".1" max="2" value="1" step=".1">
+            <br>
+           
+            <button id="tranBtn" type="button"onclick=" Transform()">Transform</button>
+            <button id="retBtn" type="button"onclick="Reset()" disabled>Reset</button>
+            
+            <div id="hints">
+                <h4>提示:</h4>
+                <p>点击 Transform 开始变换(快捷键T), 点击 Reset 重置(快捷键R)</p>
+                <p>你可以通过设置 a b c d tx ty 的值来控制变化矩阵从而完成2d变换, 这需要一点图形学和矩阵的知识。2D 变换可以看成平面点齐次坐标的变换</p>
+                <p>你还可以通过设置 scale 和 angle 的值来完成伸缩/旋转变换， 这些变换实际转换为进一步修改变换矩阵中 a b c d tx ty 的值来实现</p>
+                <iframe id="github"
+                    src="https://ghbtns.com/github-btn.html?user=s1acr&repo=maze-algo&type=watch&count=true&size=large&v=2"
+                    frameborder="0" scrolling="0" width="170" height="30" title="GitHub">
+                </iframe>
+                <small id="copy"> <big>&copy;slacr </big> 2024-4</small>
+            </div>
+        </sub>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
